@@ -18,12 +18,14 @@ jobs:
         run: |
           if [[ -z "$SLACK_WEBHOOK" || -z "$GITHUB_TOKEN" ]]; then
             echo "One or more secrets are missing. Please make sure to set both SLACK_WEBHOOK and GITHUB_TOKEN secrets in repository settings."
-            echo "::set-output name=secrets_exist::false"
+            echo "secrets_exist=false" >> "$GITHUB_ENV"
             exit 1
           else
             echo "All secrets exist."
-            echo "::set-output name=secrets_exist::true"
+            echo "secrets_exist=true" >> "$GITHUB_ENV"
           fi
+          echo "SLACK_WEBHOOK=$SLACK_WEBHOOK"
+          echo "GITHUB_TOKEN=$GITHUB_TOKEN"
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
