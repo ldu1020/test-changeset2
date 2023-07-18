@@ -19,7 +19,6 @@ jobs:
           if [[ -z "$SLACK_WEBHOOK" || -z "$GITHUB_TOKEN" ]]; then
             echo "One or more secrets are missing. Please make sure to set both SLACK_WEBHOOK and GITHUB_TOKEN secrets in repository settings."
             echo "secrets_exist=false" >> "$GITHUB_ENV"
-            exit 1
           else
             echo "All secrets exist."
             echo "secrets_exist=true" >> "$GITHUB_ENV"
