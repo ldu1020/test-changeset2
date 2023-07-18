@@ -1,0 +1,24 @@
+{
+  "name": "test-chageset",
+  "version": "2.8.0-beta.4",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ldu1020/test-changeset.git"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "semantic-release": "21.0.1",
+    "semantic-release-slack-bot": "^4.0.1"
+  }
+}
